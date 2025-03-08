@@ -2,9 +2,9 @@ name: Build APK
 run-name: Build stupid fluffychat
 # on: [push]
 on:
-  # release:
-  #   types:
-  #     - created
+  release:
+    types:
+      - created
 concurrency:
   group: release_workflow
   cancel-in-progress: true
