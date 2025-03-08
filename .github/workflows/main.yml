@@ -27,7 +27,7 @@ jobs:
         env:
           KEY_STORE: ${{ secrets.KEY_STORE }}
           KEY_PASS: ${{ secrets.KEY_PASS }}
-        run: ./scrips/prepare-android-release.sh
+        run: ./scripts/prepare-android-release.sh
       - run: flutter build apk --release
       - name: Upload build
         uses: actions/upload-release-asset@v1
