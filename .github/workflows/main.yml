@@ -31,12 +31,9 @@ jobs:
         run: ./scripts/prepare-android-release.sh
       - run: flutter build apk --release
       - name: Upload build
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        uses: actions/upload-artifact@v4
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: build/app/outputs/apk/release/app-release.apk
-          asset_name: fluffychat.apk
-          asset_content_type: application/vnd.android.package-archive
+          name: fluffychat.apk
+          path: build/app/outputs/apk/release/app-release.apk
+
 
