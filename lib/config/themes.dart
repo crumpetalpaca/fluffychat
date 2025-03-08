@@ -17,6 +17,26 @@ abstract class FluffyThemes {
   static bool isThreeColumnMode(BuildContext context) =>
       MediaQuery.of(context).size.width > FluffyThemes.columnWidth * 3.5;
 
+  static const fallbackTextStyle = TextStyle(
+    fontFamily: 'Atkinson Hyperlegible Next',
+  );
+
+  static var fallbackTextTheme = const TextTheme(
+    bodyLarge: fallbackTextStyle,
+    bodyMedium: fallbackTextStyle,
+    labelLarge: fallbackTextStyle,
+    bodySmall: fallbackTextStyle,
+    labelSmall: fallbackTextStyle,
+    displayLarge: fallbackTextStyle,
+    displayMedium: fallbackTextStyle,
+    displaySmall: fallbackTextStyle,
+    headlineMedium: fallbackTextStyle,
+    headlineSmall: fallbackTextStyle,
+    titleLarge: fallbackTextStyle,
+    titleMedium: fallbackTextStyle,
+    titleSmall: fallbackTextStyle,
+  );
+
   static LinearGradient backgroundGradient(
     BuildContext context,
     int alpha,
@@ -51,6 +71,7 @@ abstract class FluffyThemes {
       useMaterial3: true,
       brightness: brightness,
       colorScheme: colorScheme,
+      textTheme: fallbackTextTheme,
       dividerColor: brightness == Brightness.dark
           ? colorScheme.surfaceContainerHighest
           : colorScheme.surfaceContainer,

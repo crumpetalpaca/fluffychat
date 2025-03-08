@@ -117,6 +117,18 @@ flutter:
     - assets/js/
     - assets/js/package/
 
+  fonts:
+    - family: Atkinson Hyperlegible Next
+      fonts:
+        - asset: fonts/AtkinsonHyperlegibleMono-Regular.ttf 
+        - asset: fonts/AtkinsonHyperlegibleNext-Medium.ttf
+        - asset: fonts/AtkinsonHyperlegibleNext-Italic.ttf
+          style: italic
+    - family: Atkinson Hyperlegible Mono
+      fonts:
+        - asset: fonts/AtkinsonHyperlegibleMono-Regular.ttf
+        
+
 msix_config:
   display_name: FluffyChat
   publisher_display_name: FluffyChat
