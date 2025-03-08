@@ -127,6 +127,9 @@ flutter:
     - family: Atkinson Hyperlegible Mono
       fonts:
         - asset: fonts/AtkinsonHyperlegibleMono-Regular.ttf
+    - family: nasin-nanpa
+      fonts:
+        - asset: nasin-nanpa-5.0.0-beta.1-UCSUR.otf
         
 
 msix_config:

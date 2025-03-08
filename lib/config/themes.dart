@@ -19,6 +19,7 @@ abstract class FluffyThemes {
 
   static const fallbackTextStyle = TextStyle(
     fontFamily: 'Atkinson Hyperlegible Next',
+    fontFamilyFallback: ['nasin-nanpa']
   );
 
   static var fallbackTextTheme = const TextTheme(
