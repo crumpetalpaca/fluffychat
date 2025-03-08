@@ -120,7 +120,7 @@ flutter:
   fonts:
     - family: Atkinson Hyperlegible Next
       fonts:
-        - asset: fonts/AtkinsonHyperlegibleMono-Regular.ttf 
+        - asset: fonts/AtkinsonHyperlegibleNext-Regular.ttf 
         - asset: fonts/AtkinsonHyperlegibleNext-Medium.ttf
         - asset: fonts/AtkinsonHyperlegibleNext-Italic.ttf
           style: italic
