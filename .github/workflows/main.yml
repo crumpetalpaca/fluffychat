@@ -27,8 +27,11 @@ jobs:
         env:
           KEY_STORE: ${{ secrets.KEY_STORE }}
           KEY_PASS: ${{ secrets.KEY_PASS }}
+        run: ./scrips/prepare-android-release.sh
+      - run: flutter build apk --release
       - name: Upload build
         with:
           asset_path: build/app/outputs/apk/release/app-release.apk
+          asset_name: fluffychat.apk
 
 
