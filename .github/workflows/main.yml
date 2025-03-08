@@ -1,6 +1,7 @@
 name: Build APK
 run-name: Build stupid fluffychat
-on: [push]
+# on: [push]
+on:
   # release:
   #   types:
   #     - created
