@@ -186,7 +186,8 @@ class BackgroundPush {
           currentPushers.first.lang == 'en' &&
           currentPushers.first.data.url.toString() == gatewayUrl &&
           currentPushers.first.data.format ==
-              AppConfig.pushNotificationsPusherFormat &&
+              AppSettings.pushNotificationsPusherFormat
+                  .getItem(matrix!.store) &&
           mapEquals(
             currentPushers.single.data.additionalProperties,
             {"data_message": pusherDataMessageFormat},
@@ -226,7 +227,8 @@ class BackgroundPush {
             lang: 'en',
             data: PusherData(
               url: Uri.parse(gatewayUrl!),
-              format: AppConfig.pushNotificationsPusherFormat,
+              format: AppSettings.pushNotificationsPusherFormat
+                  .getItem(matrix!.store),
               additionalProperties: {"data_message": pusherDataMessageFormat},
             ),
             kind: 'http',
@@ -315,7 +317,8 @@ class BackgroundPush {
       }
     }
     await setupPusher(
-      gatewayUrl: AppConfig.pushNotificationsGatewayUrl,
+      gatewayUrl:
+          AppSettings.pushNotificationsGatewayUrl.getItem(matrix!.store),
       token: _fcmToken,
     );
   }
@@ -427,7 +430,10 @@ class BackgroundPush {
 }
 
 class UPFunctions extends UnifiedPushFunctions {
-  final List<String> features = [/*list of features*/];
+  final List<String> features = [
+    /*list of features*/
+  ];
+
   @override
   Future<String?> getDistributor() async {
     return await UnifiedPush.getDistributor();

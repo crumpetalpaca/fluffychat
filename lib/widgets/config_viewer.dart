@@ -15,19 +15,23 @@ class ConfigViewer extends StatelessWidget {
     AppSettings appSetting,
     SharedPreferences store,
     Function setState,
+    String initialValue,
   ) async {
+    if (appSetting is AppSettings<bool>) {
+      appSetting.setItem(store, !(initialValue == 'true'));
+      return;
+    }
+
     final value = await showTextInputDialog(
       context: context,
       title: appSetting.name,
-      initialText: appSetting.defaultValue.toString(),
+      hintText: appSetting.defaultValue.toString(),
+      initialText: initialValue,
     );
     if (value == null) return;
 
     if (appSetting is AppSettings<String>) {
       appSetting.setItem(store, value);
-    }
-    if (appSetting is AppSettings<bool>) {
-      appSetting.setItem(store, value == 'true');
     }
     if (appSetting is AppSettings<int>) {
       appSetting.setItem(store, int.parse(value));
@@ -91,6 +95,7 @@ class ConfigViewer extends StatelessWidget {
                         appSetting,
                         store,
                         setState,
+                        value,
                       ),
                     );
                   },
